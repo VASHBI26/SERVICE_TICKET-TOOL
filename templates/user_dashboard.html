@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html><body>
+<h2>User Dashboard</h2>
+<h3>Create Ticket</h3>
+<form method="post" action="/user/create_ticket">
+  Type: <input name="type"><br>
+  Description: <input name="description"><br>
+  <input type="submit" value="Submit Ticket">
+</form>
+<h3>Your Tickets</h3>
+<ul>{% for t in tickets %}<li>#{{ t.id }} - {{ t.description }} - {{ t.status }}</li>{% endfor %}</ul>
+<a href="/logout">Logout</a>
+</body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html><body>
+<h2>Admin Dashboard</h2>
+<h3>Create User</h3>
+<form method="post" action="/admin/create_user">
+  Username: <input name="username"><br>
+  Password: <input name="password" type="password"><br>
+  Role: <select name="role"><option value="user">User</option><option value="approver">Approver</option></select><br>
+  <input type="submit" value="Create User">
+</form>
+<h3>Audit Logs</h3>
+<ul>{% for log in logs %}<li>{{ log }}</li>{% endfor %}</ul>
+<a href="/logout">Logout</a>
+</body></html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><body>
+<h2>Approver Dashboard</h2>
+<h3>All Tickets</h3>
+<ul>
+{% for t in tickets %}
+  <li>#{{ t.id }} - {{ t.description }} - {{ t.status }}
+    {% if t.status == 'Pending' %}
+      <a href="/approver/approve/{{ t.id }}">[Approve]</a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+<a href="/logout">Logout</a>
+</body></html>
